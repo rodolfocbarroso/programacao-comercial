@@ -16,6 +16,7 @@ import posixpath
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
@@ -31,6 +32,8 @@ ALLOWED_HOSTS = []
 # https://docs.djangoproject.com/en/2.1/ref/settings/#std:setting-INSTALLED_APPS
 INSTALLED_APPS = [
     # Add your apps here to enable them
+
+    'veiculos.apps.VeiculosConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -39,8 +42,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 ]
 
-# Middleware framework
-# https://docs.djangoproject.com/en/2.1/topics/http/middleware/
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -53,8 +54,21 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'Sistema.urls'
 
-# Template configuration
-# https://docs.djangoproject.com/en/2.1/topics/templates/
+
+LOGGING = {
+    'version':1,
+    'disable_existing_loggers':False,
+    'handlers':{
+        'console':{
+            'class':'logging.StreamHandler',
+        },
+    },
+    'root':{
+        'handlers':['console'],
+        'level':'INFO',
+    },
+}
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -105,8 +119,9 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
-LANGUAGE_CODE = 'pt-br'
-TIME_ZONE = 'Americana/Araguaina'
+LANGUAGE_CODE = 'pt-BR'
+TIME_ZONE = 'UTC'
+
 USE_I18N = True
 USE_L10N = True
 USE_TZ = True

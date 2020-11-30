@@ -36,6 +36,14 @@
     <Compile Include="Sistema\settings.py" />
     <Compile Include="Sistema\urls.py" />
     <Compile Include="Sistema\wsgi.py" />
+    <Compile Include="veiculos\admin.py" />
+    <Compile Include="veiculos\apps.py" />
+    <Compile Include="veiculos\forms.py" />
+    <Compile Include="veiculos\models.py" />
+    <Compile Include="veiculos\tests.py" />
+    <Compile Include="veiculos\urls.py" />
+    <Compile Include="veiculos\views.py" />
+    <Compile Include="veiculos\__init__.py" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="requirements.txt" />
@@ -44,6 +52,7 @@
   <ItemGroup>
     <Folder Include="Templates\" />
     <Folder Include="Sistema\" />
+    <Folder Include="veiculos\" />
   </ItemGroup>
   <ItemGroup>
     <Interpreter Include="env\">
